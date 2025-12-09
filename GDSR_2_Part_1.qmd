@@ -1,0 +1,455 @@
+---
+title: "Das Tidyverse und erste Schritte in ggplot2"
+subtitle: "Grundlagen der Datenanalyse und Statistik mit R"
+author: "Prof. Dr. Daniel Schnitzlein"
+footer: "GitHub-Repo: <https://github.com/dschnitzlein/GDSR_2/>"
+engine: knitr
+format: 
+  live-revealjs:
+    theme: [default, custom.scss]
+    progress: true
+    slide-number: true
+    width: 1400
+    title-slide-attributes:
+      data-background-color: "#2A4D69"
+      data-background-image: "/images/logo.png"
+      data-background-size: "30%"
+      data-background-position: "center right 20px"
+css: custom.css
+editor: visual
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+## Was sind R-Pakete?
+
+<br>
+
+::: incremental
+-   R besteht aus einer Basiskomponente, die durch sogenannte R-Pakete erweitert werden kann um bestimmte Aufgaben zu lösen.
+
+-   Das wichtigste Repository für R-Pakete, das Comprehensive R Archive Network (CRAN), listet zur Zeit `23.039` (Dezember 2025) verfügbare Pakete auf (zuzüglich einer Unmenge von Paketen auf Github).
+
+-   Für alle (die meisten) verfügbaren Pakete ist eine umfangreiche Dokumentation verfügbar.
+
+-   Möglichkeiten den Überblick zu behalten:
+
+    -   CRAN Task Views (siehe nächste Seite)
+
+    -   Social Media Posts
+
+    -   R-User Konferenzen (meist auch via YouTube verfügbar) oder
+
+    -   Diskussionen in Foren und/oder GitHub.
+:::
+
+## CRAN Task Views
+
+<br>
+
+![](/images/Bild1.png){fig-align="center"}
+
+## Was bedeuten Pakete für R?
+
+<br>
+
+::: incremental
+-   Pakete erweitern den Funktionsumfang von R erheblich. Pakete werden von der Community und/oder Unternehmen erstellt und gepflegt.
+
+-   `Vorteil` : Durch die aktive und breite Community stellt R auch für hochspezalisierte Fragestellungen Lösungen bereit, die properitäre Software u.U. nicht enthalten würde.
+
+-   `Vorteil`: Deutlich höhere Entwicklungsgeschwindigkeit neuer Methoden.
+
+-   `Nachteil`: Nicht alle Pakete sind zwingend miteinander kompatibel. Fallen die Akteure, die ein Paket betreuen aus, kann es sein, dass die Funktionalität verloren geht, wenn sich R weiterentwickelt.
+
+-   `Nachteil`: Ebenso umfasst Versionierung nicht nur R sondern auch alle Pakete.
+
+-   `Realität`: Viele populäre Pakete werden in Gruppen zusammengefasst entwickelt und gepflegt. Oft sind zentrale Figuren entweder bei Unternehmen angestellt, die einen Bezug zu R haben, oder die R extensiv nutzen.
+:::
+
+## Es gibt Pakete die R erweitern, z.B. die `easystats` Paket-Gruppe
+
+|                                                        |
+|--------------------------------------------------------|
+| ![](/images/Bild2.png){fig-align="center" width="693"} |
+
+## Es gibt Pakete die auch die Art und Weise verändern wie mit R gearbeitet wird, z.B. die Pakete aus dem `tidyverse`
+
+![](/images/Bild3.png){fig-align="center"}
+
+## Die wichtigsten Pakete nach Downloads
+
+<br>
+
+![](/images/Bild7.png){fig-align="center"}
+
+## Die Rolle von Posit (früher RStudio)
+
+<br>
+
+::: incremental
+-   Die Entwicklung von R zu der Verbreitung die R heute hat, wäre ohne die grafische IDE RStudio die 2011 von der damals gleichnamigen Firma auf den Markt gebracht wurde nicht denkbar gewesen.
+
+-   RStudio hat aber auch massiv die Entwicklung von R von einem "Spielplatz für Akademiker" hin zu einer zuverlässigen Grundlage für Produktivsysteme vorangetrieben.
+
+-   RStudio verdient dabei ihr Geld mit der Bereitstellung von R Entwicklungsumgebungen (u.a. RStudio) für Unternehmen.
+
+-   Inzwischen hat sich RStudio in Posit umbenannt und hat neben dem Fokus auf R auch Python im Blick.
+
+-   Viele hoch innovative Pakete in R und Python werden direkt oder indirekt von Posit entwickelt.
+
+-   Dadurch ergibt sich natürlich eine gewisse Macht aber auch eine gewisse Notwendigkeit Standards zu setzen (siehe tidyverse).
+
+-   Nicht unbedingt in der ganzen R Community beliebt.
+:::
+
+## Beispiel: Lebenszyklus für Funktionen
+
+<br>
+
+::::: columns
+::: {.column width="50%"}
+-   Ein weit verbreitetes Problem mit Funktionen in R Paketen war lange Zeit (und ist es stellenweise immer noch), dass diese teilweise sehr kurzfristig durch neue Versionen ersetzt werden.
+
+-   Insbesondere in Produktivumgebungen ist das sehr ärgerlich, wenn z.B. Dashboards nach Updates neu angepasst werden müssen.
+
+-   Idealerweise kündigen die jeweiligen Administratoren der Pakete solche Änderungen an. Jedoch ist das nicht immer so.
+
+-   Posit/RStudio hat um diesem Problem zu beheben einen Lebenszyklus für Funktionen/Pakete etc. eingeführt.
+:::
+
+::: {.column width="50%"}
+![](/images/Bild4.png){width="700"}
+:::
+:::::
+
+## Beispiel: Positron
+
+![](/images/Bild5.png){fig-align="center"}
+
+## Das tidyverse besteht aktuell aus acht Kernpakten
+
+::::: columns
+::: {.column width="49%"}
+![](/images/Bild3.png){width="639"}
+:::
+
+::: {.column width="49%"}
+*At a high level, the tidyverse is a language for solving data science challenges with R code. Its primary goal is to facilitate a conversation between a human and a computer about data.*
+
+*Less abstractly, the tidyverse is a collection of R packages that share a high-level design philosophy and low-level grammar and data structures, so that learning one package makes it easier to learn the next.*
+
+(Wickham et al. 2019)
+:::
+:::::
+
+## In der aktuellen Version 2.0.0 sind das folgende Pakete
+
+<br>
+
+::: incremental
+-   `ggplot2` ist ein System zur deklarativen Erstellung von Abbildungen, das auf der `Grammar of Graphics` basiert.
+
+-   `dplyr` bietet eine Grammatik der Datenmanipulation und stellt einen einheitlichen Satz von "Verben" bereit, mit denen sich die häufigsten Aufgaben bei der Datenmanipulation lösen lassen.
+
+-   `tidyr` bietet eine Reihe von Funktionen um Daten in `tidy data` zu transformieren. `Tidy data` sind Daten in einer einheitlichen Form.
+
+-   `readr` bietet eine schnelle und benutzerfreundliche Möglichkeit, rechteckige Daten (wie z.B. csv) einzulesen. Es ist so konzipiert, dass es viele verschiedene Arten von Daten flexibel handhaben kann.
+
+-   `purrr` erweitert das Toolkit für funktionale Programmierung (FP) von R um einen vollständigen und einheitlichen Satz von Werkzeugen für die Arbeit mit Funktionen und Vektoren.
+
+-   `tibble` ist eine moderne Neuinterpretation des Data Frame mit einigen Zusatzfeatures.
+
+-   `stringr` bietet eine Reihe Funktionen, die die Arbeit mit Strings (Zeichenketten) so einfach wie möglich machen sollen.
+
+-   `forcats` bietet eine Reihe nützlicher Tools, die gängige Probleme mit Faktoren lösen.
+
+-   `lubridate` bietet eine Reihe nützlicher Funktionen zur Arbeit mit Datumsangaben und Uhrzeiten.
+:::
+
+## Die Zielsetzung des tidyverse
+
+<br>
+
+-   Liegen Daten in der Form vor, wie das tidyverse die Daten gerne hätte (tidy data), dann sollten alle Funktionen aller tidyverse-Pakete und der sich auf das tidyverse berufenden Pakete `out-of-the-box` funktionieren.
+
+-   Alle Funktionen des tidyverse sollen einer gemeinsamen Logik im Funktionsaufbau folgen.
+
+-   Die tidyverse Pakete orientieren sich dabei an einem genormten Ablauf einer Datenanalyse.
+
+-   Dieser hohe Standardisierungsgrad hat dazu beigetragen z.B. ggplot2 zum wichtigsten R-Paket zumachen mit aktuell (Dezember 2025) 174 Mio. Downloads (über CRAN).
+
+-   Posit wendet dabei die Standards sowohl auf R als auch auf Python an. Mittelfristig ist das Ziel einen nahtlosen Austausch zwischen Python und R Paketen zu ermöglichen.
+
+## Datenanalyse mit dem tidyverse
+
+<br>
+
+<br>
+
+::::: columns
+::: {.column width="60%"}
+-   Im Internet gibt es zahlreiche Tutorials, die erklären, wie man mit den Paketen des tidyverse arbeitet.
+
+-   Eine sehr gute und umfassende Referenz ist Hadley Wickhams Buch `R for Data Science`.
+
+-   Die 2. Auflage des Buches ist auch als (Open-Source-)Online-Version unter <https://r4ds.hadley.nz/> verfügbar.
+
+-   Die Ausführungen in dem Buch sind Grundlage dieses Abschnitts.
+:::
+
+::: {.column width="39%"}
+![](images/Bild8.png){fig-align="center" width="315"}
+:::
+:::::
+
+## Der Datenanalyse Prozess
+
+<br>
+
+![](/images/Bild6.png){fig-align="center"}
+
+::: aside
+Abbildung 1 in https://r4ds.hadley.nz/
+:::
+
+## Wir starten heute mit Datenvisualisierung
+
+<br>
+
+::: incremental
+-   Wir müssten eigentlich zuerst damit anfangen zu lernen Daten zu *importieren* und in die *richtige Form* (tidy data) zu bringen.
+
+-   Allerdings ist das zu `80%` öde und langweilig und zu `20%` nervend und frustrierend (Zitat aus R for Data Science).
+
+-   Daher starten wir erstmal mit Visualisieren und Transformieren von Daten die bereits in optimaler Form vorliegen.
+
+-   Lassen Sie uns aufs Eis gehen.
+
+-   ![](images/penguins.png){fig-align="right" width="415"}
+:::
+
+## Unser Datensatz `palmerpenguins`
+
+::::: columns
+::: {.column width="79%"}
+-   Der Datensatz den wir hier nutzen ist der Palmer Penguins Datensatz (344 Pinguine):
+
+-   Die Informationen wurden von 2007 bis 2009 von Kristen Gorman im Rahmen des Palmer Station Long Term Ecological Research Program gesammelt.
+
+-   Der Datensatz enthält drei qualitative Variablen und vier quantitative Variablen und ermöglicht dadurch viele verschiedene Visualisierungen.
+
+-   Sie können die Daten via `install.packages('palmerpenguins')` installieren und wie jedes andere R-Paket auch via `library(palmerpenguins)` laden. Der Datensatz heißt `penguins`.
+:::
+
+::: {.column width="20%"}
+![](images/penguins2.png){fig-align="center" width="197"}
+:::
+:::::
+
+```{webr}
+install.packages('palmerpenguins')
+library(palmerpenguins)
+```
+
+<br>
+
+<br>
+
+::: aside
+Details zum Datensatz finden Sie hier: <https://allisonhorst.github.io/palmerpenguins/index.html>
+:::
+
+## Die Hauptdarsteller
+
+![](images/BIld9.png)
+
+## Haben Pinguine mit längeren Flossen ein höheres oder ein niedrigeres Gewicht im Vergleich zu Pinguinen mit kürzeren Flossen?
+
+<br>
+
+![](images/Bild10.png){fig-align="center" width="726"}
+
+## Data Visualization mit ggplot2
+
+<br>
+
+::::: columns
+::: {.column width="80%"}
+-   `ggplot2` ist Teil des `tidyverse` und ein (das wichtigste) R-Paket zur Erstellung von Datenvisualisierungen.
+
+-   `ggplot2` basiert auf einer zugrundeliegende Grammatik, der `Grammar of Graphics` (Wilkinson 1999), die es ermöglicht, beliebige Abbildungen durch die Kombination unabhängiger Komponenten zusammenzustellen.
+
+-   Das macht `ggplot2` so leistungsfähig. Anstatt auf eine Reihe von vordefinierten Abbildungen beschränkt zu sein, können Sie neue Visualisierungen erstellen, die auf Ihr spezifisches Problem zugeschnitten sind.
+:::
+
+::: {.column width="20%"}
+![](images/Bild11.png){fig-align="center" width="200"}
+:::
+:::::
+
+-   Es gibt viele gute Online Tutorials und Open Access Bücher zu `ggplot2`:
+
+    -   z.B. das Buch von Hadley Wickham: <https://ggplot2-book.org/> oder das
+
+    -   `ggplot2` Cheat Sheet von posit <https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf>
+
+::: aside
+Wilkinson, L. (1999), *The Grammar of Graphics*, Springer.
+:::
+
+## Schlüsselkomponenten
+
+<br>
+
+Jede ggplot2 Abbildung hat drei zentrale Komponenten: `Daten`, `aesthetic mappings` zwischen Variablen und Elementen der Abbildung sowie `mindestens einen Layer (Schicht)`, die beschreibt wie die Beobachtungen dargestellt werden sollen. Layer können mit einer `geom` Funktion erstellt werden.
+
+```{webr}
+#| output: false
+library(ggplot2) # Alternativ könnten wir auch das Meta Paket tidyverse einbinden.
+```
+
+<br>
+
+Ein erstes einfaches Beispiel: Ein `Scatterplot` (Streudiagramm) beschrieben durch `data`: penguins, `aesthetic mapping`: flipper_length_mm auf der X-Achse und body_mass_g auf der Y-Achse, `layer`: Punkte.
+
+```{webr}
+#| warning: false
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g)) + geom_point()
+```
+
+## Struktur des Funktionsaufrufs
+
+<br>
+
+`data` und `aesthetic mappings` sind in `ggplot()` enthalten und die `layer` werden mit `+` hinzugefügt. Die Eigenschaften in `ggplot()` werden an die `layer` *vererbt*.
+
+```{webr}
+#| warning: false
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g)) + geom_point()
+```
+
+<br>
+
+Hinweis: Die Zusätze data=, x=, und y= in der ggplot() Funktion sind nicht unbedingt notwendig aber machen den Code lesbarer. Probieren Sie es einfach aus!
+
+## Colour, size, shape und andere `aesthetic attributes`
+
+<br>
+
+-   Die `aesthetic attributes` *colour*, *size* und *shape* können genutzt werden um zusätzliche Variablen zu einer Abbildung hinzuzufügen. Sie werden in aes() mit eingebunden und können auch kombiniert werden.
+
+```{webr}
+#| warning: false
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g, colour=species)) + geom_point()
+```
+
+-   `ggplot2` kümmert sich um die Details der Erstellung einer passenden Skala und Legende. Später werden wir diese auch ausblenden oder bearbeiten.
+
+-   Probieren Sie was oben passiert wenn Sie statt `species` die Variable `bill_length_mm` nutzen.
+
+-   Wenn ein Element auf eine fixes Attribut gesetzt werden soll, können Sie dieses direkt in der `geom_` Funktion angeben.
+
+```{webr}
+#| warning: false
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g)) + geom_point(colour='blue')
+```
+
+## Faceting
+
+<br>
+
+Faceting bietet die Möglichkeit die Daten nach Kategorien auszuwerten.
+
+```{webr}
+#| warning: false
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g)) + geom_point() + facet_wrap(~species)
+```
+
+## Code Konventionen
+
+<br>
+
+Um den Code lesbarer zu machen, ist es Konvention jede Schicht oder zusätzliches Element auf eine eigene Zeile zu schreiben.
+
+```{webr}
+#| warning: false
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point() + 
+  facet_wrap(~species)
+```
+
+## Oft genutzte `geoms`
+
+<br>
+
+|  |  |
+|------------------------------------|------------------------------------|
+| `geom_point( )` | Streudiagramm (Punkte) |
+| `geom_smooth( )` | u.a. Trendlinien inkl. Konfidenzintervalle |
+| `geom_boxplot( )` | Boxplot |
+| `geom_histogram( )` und `geom_freqpoly( )` | Histogramme bzw. Häufigkeitsverteilung |
+| `geom_bar( )` | Balken-/Säulendiagramm |
+| `geom_path( )` und `geom_line( )` | Verbindungen zwischen Datenpunkten |
+| <https://r-graph-gallery.com/> | Viele weitere Beispiele |
+
+<br>
+
+Probieren Sie es aus:
+
+```{webr}
+#| warning: false
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point()
+```
+
+## Zurück zu unserer wichtigen Fragestellung
+
+<br>
+
+Der vollständige Befehl für die Abbildung weiter vorne im Skript lautet:
+
+```{webr}
+#| warning: false
+library(ggthemes)
+
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point(aes(color = species, shape = species)) + 
+  geom_smooth(method = "lm") + 
+  labs(title = "Body mass and flipper length", subtitle = "Dimensions for Adelie, Chinstrap, and   Gentoo Penguins", x = "Flipper length (mm)", y = "Body mass (g)", color = "Species", shape =   "Species") + 
+  scale_color_colorblind()
+```
+
+## Aufbau der Abbildung Stück für Stück
+
+```{webr}
+#| warning: false
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g))
+```
+
+## Themes (später mehr dazu)
+
+<br>
+
+`ggplot2` ermöglicht es anhand von Themes die Formatierung von Abbildungen weitgehend zu automatisieren (z.B. Anwendung von einheitlichem Corporate Design). Wir werden uns mit Themes später im Seminar im Detail beschäftigen.
+
+```{webr}
+#| warning: false
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point(aes(color = species, shape = species)) + 
+  geom_smooth(method = "lm") + 
+  labs(title = "Body mass and flipper length", subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins", x = "Flipper length (mm)", y = "Body mass (g)", color = "Species", shape = "Species") + 
+  theme_economist()
+```
+
+## Man kann Themes zu allem (!) im Internet finden
+
+::: r-stack
+![](images/Bild12.png){.fragment}
+
+![](images/Bild13.png){.fragment}
+
+![](images/Bild14.png){.fragment}
+
+![](images/Bild15.png){.fragment}
+:::

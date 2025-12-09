@@ -1,1 +1,1 @@
-# GDSR_2
+# Hier finden Sie die Materialien zum zweiten Kurstermin

@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "GDSR_2_Part_1.html#was-sind-r-pakete",
+    "href": "GDSR_2_Part_1.html#was-sind-r-pakete",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Was sind R-Pakete?",
+    "text": "Was sind R-Pakete?\n\n\nR besteht aus einer Basiskomponente, die durch sogenannte R-Pakete erweitert werden kann um bestimmte Aufgaben zu lösen.\nDas wichtigste Repository für R-Pakete, das Comprehensive R Archive Network (CRAN), listet zur Zeit 23.039 (Dezember 2025) verfügbare Pakete auf (zuzüglich einer Unmenge von Paketen auf Github).\nFür alle (die meisten) verfügbaren Pakete ist eine umfangreiche Dokumentation verfügbar.\nMöglichkeiten den Überblick zu behalten:\n\nCRAN Task Views (siehe nächste Seite)\nSocial Media Posts\nR-User Konferenzen (meist auch via YouTube verfügbar) oder\nDiskussionen in Foren und/oder GitHub."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#cran-task-views",
+    "href": "GDSR_2_Part_1.html#cran-task-views",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "CRAN Task Views",
+    "text": "CRAN Task Views"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#was-bedeuten-pakete-für-r",
+    "href": "GDSR_2_Part_1.html#was-bedeuten-pakete-für-r",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Was bedeuten Pakete für R?",
+    "text": "Was bedeuten Pakete für R?\n\n\nPakete erweitern den Funktionsumfang von R erheblich. Pakete werden von der Community und/oder Unternehmen erstellt und gepflegt.\nVorteil : Durch die aktive und breite Community stellt R auch für hochspezalisierte Fragestellungen Lösungen bereit, die properitäre Software u.U. nicht enthalten würde.\nVorteil: Deutlich höhere Entwicklungsgeschwindigkeit neuer Methoden.\nNachteil: Nicht alle Pakete sind zwingend miteinander kompatibel. Fallen die Akteure, die ein Paket betreuen aus, kann es sein, dass die Funktionalität verloren geht, wenn sich R weiterentwickelt.\nNachteil: Ebenso umfasst Versionierung nicht nur R sondern auch alle Pakete.\nRealität: Viele populäre Pakete werden in Gruppen zusammengefasst entwickelt und gepflegt. Oft sind zentrale Figuren entweder bei Unternehmen angestellt, die einen Bezug zu R haben, oder die R extensiv nutzen."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#es-gibt-pakete-die-r-erweitern-z.b.-die-easystats-paket-gruppe",
+    "href": "GDSR_2_Part_1.html#es-gibt-pakete-die-r-erweitern-z.b.-die-easystats-paket-gruppe",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Es gibt Pakete die R erweitern, z.B. die easystats Paket-Gruppe",
+    "text": "Es gibt Pakete die R erweitern, z.B. die easystats Paket-Gruppe"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#es-gibt-pakete-die-auch-die-art-und-weise-verändern-wie-mit-r-gearbeitet-wird-z.b.-die-pakete-aus-dem-tidyverse",
+    "href": "GDSR_2_Part_1.html#es-gibt-pakete-die-auch-die-art-und-weise-verändern-wie-mit-r-gearbeitet-wird-z.b.-die-pakete-aus-dem-tidyverse",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Es gibt Pakete die auch die Art und Weise verändern wie mit R gearbeitet wird, z.B. die Pakete aus dem tidyverse",
+    "text": "Es gibt Pakete die auch die Art und Weise verändern wie mit R gearbeitet wird, z.B. die Pakete aus dem tidyverse"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#die-wichtigsten-pakete-nach-downloads",
+    "href": "GDSR_2_Part_1.html#die-wichtigsten-pakete-nach-downloads",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Die wichtigsten Pakete nach Downloads",
+    "text": "Die wichtigsten Pakete nach Downloads"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#die-rolle-von-posit-früher-rstudio",
+    "href": "GDSR_2_Part_1.html#die-rolle-von-posit-früher-rstudio",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Die Rolle von Posit (früher RStudio)",
+    "text": "Die Rolle von Posit (früher RStudio)\n\n\nDie Entwicklung von R zu der Verbreitung die R heute hat, wäre ohne die grafische IDE RStudio die 2011 von der damals gleichnamigen Firma auf den Markt gebracht wurde nicht denkbar gewesen.\nRStudio hat aber auch massiv die Entwicklung von R von einem “Spielplatz für Akademiker” hin zu einer zuverlässigen Grundlage für Produktivsysteme vorangetrieben.\nRStudio verdient dabei ihr Geld mit der Bereitstellung von R Entwicklungsumgebungen (u.a. RStudio) für Unternehmen.\nInzwischen hat sich RStudio in Posit umbenannt und hat neben dem Fokus auf R auch Python im Blick.\nViele hoch innovative Pakete in R und Python werden direkt oder indirekt von Posit entwickelt.\nDadurch ergibt sich natürlich eine gewisse Macht aber auch eine gewisse Notwendigkeit Standards zu setzen (siehe tidyverse).\nNicht unbedingt in der ganzen R Community beliebt."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#beispiel-lebenszyklus-für-funktionen",
+    "href": "GDSR_2_Part_1.html#beispiel-lebenszyklus-für-funktionen",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Beispiel: Lebenszyklus für Funktionen",
+    "text": "Beispiel: Lebenszyklus für Funktionen\n\n\n\n\nEin weit verbreitetes Problem mit Funktionen in R Paketen war lange Zeit (und ist es stellenweise immer noch), dass diese teilweise sehr kurzfristig durch neue Versionen ersetzt werden.\nInsbesondere in Produktivumgebungen ist das sehr ärgerlich, wenn z.B. Dashboards nach Updates neu angepasst werden müssen.\nIdealerweise kündigen die jeweiligen Administratoren der Pakete solche Änderungen an. Jedoch ist das nicht immer so.\nPosit/RStudio hat um diesem Problem zu beheben einen Lebenszyklus für Funktionen/Pakete etc. eingeführt."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#beispiel-positron",
+    "href": "GDSR_2_Part_1.html#beispiel-positron",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Beispiel: Positron",
+    "text": "Beispiel: Positron"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#das-tidyverse-besteht-aktuell-aus-acht-kernpakten",
+    "href": "GDSR_2_Part_1.html#das-tidyverse-besteht-aktuell-aus-acht-kernpakten",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Das tidyverse besteht aktuell aus acht Kernpakten",
+    "text": "Das tidyverse besteht aktuell aus acht Kernpakten\n\n\n\n\nAt a high level, the tidyverse is a language for solving data science challenges with R code. Its primary goal is to facilitate a conversation between a human and a computer about data.\nLess abstractly, the tidyverse is a collection of R packages that share a high-level design philosophy and low-level grammar and data structures, so that learning one package makes it easier to learn the next.\n(Wickham et al. 2019)"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#in-der-aktuellen-version-2.0.0-sind-das-folgende-pakete",
+    "href": "GDSR_2_Part_1.html#in-der-aktuellen-version-2.0.0-sind-das-folgende-pakete",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "In der aktuellen Version 2.0.0 sind das folgende Pakete",
+    "text": "In der aktuellen Version 2.0.0 sind das folgende Pakete\n\n\nggplot2 ist ein System zur deklarativen Erstellung von Abbildungen, das auf der Grammar of Graphics basiert.\ndplyr bietet eine Grammatik der Datenmanipulation und stellt einen einheitlichen Satz von “Verben” bereit, mit denen sich die häufigsten Aufgaben bei der Datenmanipulation lösen lassen.\ntidyr bietet eine Reihe von Funktionen um Daten in tidy data zu transformieren. Tidy data sind Daten in einer einheitlichen Form.\nreadr bietet eine schnelle und benutzerfreundliche Möglichkeit, rechteckige Daten (wie z.B. csv) einzulesen. Es ist so konzipiert, dass es viele verschiedene Arten von Daten flexibel handhaben kann.\npurrr erweitert das Toolkit für funktionale Programmierung (FP) von R um einen vollständigen und einheitlichen Satz von Werkzeugen für die Arbeit mit Funktionen und Vektoren.\ntibble ist eine moderne Neuinterpretation des Data Frame mit einigen Zusatzfeatures.\nstringr bietet eine Reihe Funktionen, die die Arbeit mit Strings (Zeichenketten) so einfach wie möglich machen sollen.\nforcats bietet eine Reihe nützlicher Tools, die gängige Probleme mit Faktoren lösen.\nlubridate bietet eine Reihe nützlicher Funktionen zur Arbeit mit Datumsangaben und Uhrzeiten."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#die-zielsetzung-des-tidyverse",
+    "href": "GDSR_2_Part_1.html#die-zielsetzung-des-tidyverse",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Die Zielsetzung des tidyverse",
+    "text": "Die Zielsetzung des tidyverse\n\n\nLiegen Daten in der Form vor, wie das tidyverse die Daten gerne hätte (tidy data), dann sollten alle Funktionen aller tidyverse-Pakete und der sich auf das tidyverse berufenden Pakete out-of-the-box funktionieren.\nAlle Funktionen des tidyverse sollen einer gemeinsamen Logik im Funktionsaufbau folgen.\nDie tidyverse Pakete orientieren sich dabei an einem genormten Ablauf einer Datenanalyse.\nDieser hohe Standardisierungsgrad hat dazu beigetragen z.B. ggplot2 zum wichtigsten R-Paket zumachen mit aktuell (Dezember 2025) 174 Mio. Downloads (über CRAN).\nPosit wendet dabei die Standards sowohl auf R als auch auf Python an. Mittelfristig ist das Ziel einen nahtlosen Austausch zwischen Python und R Paketen zu ermöglichen."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#datenanalyse-mit-dem-tidyverse",
+    "href": "GDSR_2_Part_1.html#datenanalyse-mit-dem-tidyverse",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Datenanalyse mit dem tidyverse",
+    "text": "Datenanalyse mit dem tidyverse\n\n\n\n\n\nIm Internet gibt es zahlreiche Tutorials, die erklären, wie man mit den Paketen des tidyverse arbeitet.\nEine sehr gute und umfassende Referenz ist Hadley Wickhams Buch R for Data Science.\nDie 2. Auflage des Buches ist auch als (Open-Source-)Online-Version unter https://r4ds.hadley.nz/ verfügbar.\nDie Ausführungen in dem Buch sind Grundlage dieses Abschnitts."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#der-datenanalyse-prozess",
+    "href": "GDSR_2_Part_1.html#der-datenanalyse-prozess",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Der Datenanalyse Prozess",
+    "text": "Der Datenanalyse Prozess\n\n\n\n\n\n\n\n\nAbbildung 1 in https://r4ds.hadley.nz/"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#wir-starten-heute-mit-datenvisualisierung",
+    "href": "GDSR_2_Part_1.html#wir-starten-heute-mit-datenvisualisierung",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Wir starten heute mit Datenvisualisierung",
+    "text": "Wir starten heute mit Datenvisualisierung\n\n\nWir müssten eigentlich zuerst damit anfangen zu lernen Daten zu importieren und in die richtige Form (tidy data) zu bringen.\nAllerdings ist das zu 80% öde und langweilig und zu 20% nervend und frustrierend (Zitat aus R for Data Science).\nDaher starten wir erstmal mit Visualisieren und Transformieren von Daten die bereits in optimaler Form vorliegen.\nLassen Sie uns aufs Eis gehen."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#unser-datensatz-palmerpenguins",
+    "href": "GDSR_2_Part_1.html#unser-datensatz-palmerpenguins",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Unser Datensatz palmerpenguins",
+    "text": "Unser Datensatz palmerpenguins\n\n\n\nDer Datensatz den wir hier nutzen ist der Palmer Penguins Datensatz (344 Pinguine):\nDie Informationen wurden von 2007 bis 2009 von Kristen Gorman im Rahmen des Palmer Station Long Term Ecological Research Program gesammelt.\nDer Datensatz enthält drei qualitative Variablen und vier quantitative Variablen und ermöglicht dadurch viele verschiedene Visualisierungen.\nSie können die Daten via install.packages('palmerpenguins') installieren und wie jedes andere R-Paket auch via library(palmerpenguins) laden. Der Datensatz heißt penguins.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDetails zum Datensatz finden Sie hier: https://allisonhorst.github.io/palmerpenguins/index.html"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#die-hauptdarsteller",
+    "href": "GDSR_2_Part_1.html#die-hauptdarsteller",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Die Hauptdarsteller",
+    "text": "Die Hauptdarsteller"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#haben-pinguine-mit-längeren-flossen-ein-höheres-oder-ein-niedrigeres-gewicht-im-vergleich-zu-pinguinen-mit-kürzeren-flossen",
+    "href": "GDSR_2_Part_1.html#haben-pinguine-mit-längeren-flossen-ein-höheres-oder-ein-niedrigeres-gewicht-im-vergleich-zu-pinguinen-mit-kürzeren-flossen",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Haben Pinguine mit längeren Flossen ein höheres oder ein niedrigeres Gewicht im Vergleich zu Pinguinen mit kürzeren Flossen?",
+    "text": "Haben Pinguine mit längeren Flossen ein höheres oder ein niedrigeres Gewicht im Vergleich zu Pinguinen mit kürzeren Flossen?"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#data-visualization-mit-ggplot2",
+    "href": "GDSR_2_Part_1.html#data-visualization-mit-ggplot2",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Data Visualization mit ggplot2",
+    "text": "Data Visualization mit ggplot2\n\n\n\n\nggplot2 ist Teil des tidyverse und ein (das wichtigste) R-Paket zur Erstellung von Datenvisualisierungen.\nggplot2 basiert auf einer zugrundeliegende Grammatik, der Grammar of Graphics (Wilkinson 1999), die es ermöglicht, beliebige Abbildungen durch die Kombination unabhängiger Komponenten zusammenzustellen.\nDas macht ggplot2 so leistungsfähig. Anstatt auf eine Reihe von vordefinierten Abbildungen beschränkt zu sein, können Sie neue Visualisierungen erstellen, die auf Ihr spezifisches Problem zugeschnitten sind.\n\n\n\n\n\n\n\n\n\nEs gibt viele gute Online Tutorials und Open Access Bücher zu ggplot2:\n\nz.B. das Buch von Hadley Wickham: https://ggplot2-book.org/ oder das\nggplot2 Cheat Sheet von posit https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf\n\n\n\n\nWilkinson, L. (1999), The Grammar of Graphics, Springer."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#schlüsselkomponenten",
+    "href": "GDSR_2_Part_1.html#schlüsselkomponenten",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Schlüsselkomponenten",
+    "text": "Schlüsselkomponenten\n\nJede ggplot2 Abbildung hat drei zentrale Komponenten: Daten, aesthetic mappings zwischen Variablen und Elementen der Abbildung sowie mindestens einen Layer (Schicht), die beschreibt wie die Beobachtungen dargestellt werden sollen. Layer können mit einer geom Funktion erstellt werden.\n\n\n\n\n\n\n\n\n\nEin erstes einfaches Beispiel: Ein Scatterplot (Streudiagramm) beschrieben durch data: penguins, aesthetic mapping: flipper_length_mm auf der X-Achse und body_mass_g auf der Y-Achse, layer: Punkte."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#struktur-des-funktionsaufrufs",
+    "href": "GDSR_2_Part_1.html#struktur-des-funktionsaufrufs",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Struktur des Funktionsaufrufs",
+    "text": "Struktur des Funktionsaufrufs\n\ndata und aesthetic mappings sind in ggplot() enthalten und die layer werden mit + hinzugefügt. Die Eigenschaften in ggplot() werden an die layer vererbt.\n\n\n\n\n\n\n\n\n\nHinweis: Die Zusätze data=, x=, und y= in der ggplot() Funktion sind nicht unbedingt notwendig aber machen den Code lesbarer. Probieren Sie es einfach aus!"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#colour-size-shape-und-andere-aesthetic-attributes",
+    "href": "GDSR_2_Part_1.html#colour-size-shape-und-andere-aesthetic-attributes",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Colour, size, shape und andere aesthetic attributes",
+    "text": "Colour, size, shape und andere aesthetic attributes\n\n\nDie aesthetic attributes colour, size und shape können genutzt werden um zusätzliche Variablen zu einer Abbildung hinzuzufügen. Sie werden in aes() mit eingebunden und können auch kombiniert werden.\n\n\n\n\n\n\n\n\n\n\nggplot2 kümmert sich um die Details der Erstellung einer passenden Skala und Legende. Später werden wir diese auch ausblenden oder bearbeiten.\nProbieren Sie was oben passiert wenn Sie statt species die Variable bill_length_mm nutzen.\nWenn ein Element auf eine fixes Attribut gesetzt werden soll, können Sie dieses direkt in der geom_ Funktion angeben."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#faceting",
+    "href": "GDSR_2_Part_1.html#faceting",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Faceting",
+    "text": "Faceting\n\nFaceting bietet die Möglichkeit die Daten nach Kategorien auszuwerten."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#code-konventionen",
+    "href": "GDSR_2_Part_1.html#code-konventionen",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Code Konventionen",
+    "text": "Code Konventionen\n\nUm den Code lesbarer zu machen, ist es Konvention jede Schicht oder zusätzliches Element auf eine eigene Zeile zu schreiben."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#oft-genutzte-geoms",
+    "href": "GDSR_2_Part_1.html#oft-genutzte-geoms",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Oft genutzte geoms",
+    "text": "Oft genutzte geoms\n\n\n\n\ngeom_point( )\nStreudiagramm (Punkte)\n\n\ngeom_smooth( )\nu.a. Trendlinien inkl. Konfidenzintervalle\n\n\ngeom_boxplot( )\nBoxplot\n\n\ngeom_histogram( ) und geom_freqpoly( )\nHistogramme bzw. Häufigkeitsverteilung\n\n\ngeom_bar( )\nBalken-/Säulendiagramm\n\n\ngeom_path( ) und geom_line( )\nVerbindungen zwischen Datenpunkten\n\n\nhttps://r-graph-gallery.com/\nViele weitere Beispiele\n\n\n\n\nProbieren Sie es aus:"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#zurück-zu-unserer-wichtigen-fragestellung",
+    "href": "GDSR_2_Part_1.html#zurück-zu-unserer-wichtigen-fragestellung",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Zurück zu unserer wichtigen Fragestellung",
+    "text": "Zurück zu unserer wichtigen Fragestellung\n\nDer vollständige Befehl für die Abbildung weiter vorne im Skript lautet:"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#aufbau-der-abbildung-stück-für-stück",
+    "href": "GDSR_2_Part_1.html#aufbau-der-abbildung-stück-für-stück",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Aufbau der Abbildung Stück für Stück",
+    "text": "Aufbau der Abbildung Stück für Stück"
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#themes-später-mehr-dazu",
+    "href": "GDSR_2_Part_1.html#themes-später-mehr-dazu",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Themes (später mehr dazu)",
+    "text": "Themes (später mehr dazu)\n\nggplot2 ermöglicht es anhand von Themes die Formatierung von Abbildungen weitgehend zu automatisieren (z.B. Anwendung von einheitlichem Corporate Design). Wir werden uns mit Themes später im Seminar im Detail beschäftigen."
+  },
+  {
+    "objectID": "GDSR_2_Part_1.html#man-kann-themes-zu-allem-im-internet-finden",
+    "href": "GDSR_2_Part_1.html#man-kann-themes-zu-allem-im-internet-finden",
+    "title": "Das Tidyverse und erste Schritte in ggplot2",
+    "section": "Man kann Themes zu allem (!) im Internet finden",
+    "text": "Man kann Themes zu allem (!) im Internet finden"
+  }
+]
