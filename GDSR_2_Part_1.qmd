@@ -384,7 +384,7 @@ ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g)) +
 <br>
 
 |  |  |
-|------------------------------------|------------------------------------|
+|----|----|
 | `geom_point( )` | Streudiagramm (Punkte) |
 | `geom_smooth( )` | u.a. Trendlinien inkl. Konfidenzintervalle |
 | `geom_boxplot( )` | Boxplot |
